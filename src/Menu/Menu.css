@@ -1,0 +1,35 @@
+.menu-bg{
+    background-color: #ec407a;
+    position: fixed;
+    width: 100%;
+}
+
+.menu-bg ul{
+    list-style-type: none;
+}
+
+.menu-bg li{
+    float: left;
+    margin-left: 0px;
+    list-style-type: none;
+}
+
+.menu-head{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.7em;
+}
+
+.menu-link{
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+.menu-link:hover, .menu-head:hover{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
