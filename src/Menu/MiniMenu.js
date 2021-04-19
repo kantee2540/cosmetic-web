@@ -1,5 +1,6 @@
 import React from 'react'
 import './MiniMenu.css'
+import { Link } from 'react-router-dom'
 
 class MiniMenu extends React.Component{
 
@@ -14,6 +15,10 @@ class MiniMenu extends React.Component{
         document.getElementById("container").addEventListener('mousedown', ()=>{this.setState({showMenu: false})})
     }
 
+    closeMenu(){
+        this.setState({showMenu: false})
+    }
+
     render(){
         const { showMenu } = this.state
         return(
@@ -22,12 +27,11 @@ class MiniMenu extends React.Component{
                     <i className="fas fa-th" style={{fontSize: 20}}></i>
                 </button>
                 <div id="toggle-menu" style={{display: showMenu ? 'block':'none'}}>
-                    <a href="#" className="menu-link">Home</a>
-                    <a href="#" className="menu-link">Product</a>
-                    <a href="#" className="menu-link">Beauty set</a>
+                    <Link to="/" onClick={()=>this.closeMenu()} className="menu-link">Home</Link>
+                    <Link to="/product" onClick={()=>this.closeMenu()} className="menu-link">Product</Link>
+                    <Link to="/beautyset" onClick={()=>this.closeMenu()} className="menu-link">Beauty set</Link>
                     <hr/>
-                    <a href="#" className="menu-link">Sign in</a>
-                    <a href="#" className="menu-link">Get application</a>
+                    <Link to="/" onClick={()=>this.closeMenu()} className="menu-link">Get application</Link>
                 </div>
             </div>
         )

@@ -18,4 +18,18 @@ function beautySetLimit(limit, callback, errorcallback){
     })
 }
 
-export { beautySetLimit }
+function beautyset(id, callback, errorcallback){
+    let url = rootURL + "beautyset/" + id 
+
+    axios({
+        url: url,
+    })
+    .then((response)=>{
+        callback(response.data)
+    })
+    .catch((error)=>{
+        errorcallback(error)
+    })
+}
+
+export { beautySetLimit, beautyset }

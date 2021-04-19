@@ -2,10 +2,11 @@
     display: block;
     justify-content: center;
     min-height: 300px;
+    padding: 3em;
 }
 
 .search-input{
-    width: 60%;
+    min-width: 70%;
     padding: 0.7em;
     border-radius: 10px;
     border: none;
@@ -23,8 +24,6 @@
 #bottom-view{
     text-align: center;
     margin-top: 1em;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .bottom-view-title{

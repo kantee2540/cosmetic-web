@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { beautySetLimit } from '../Network/Beautyset'
 import welcome from './welcome.png'
 import './Home.css'
@@ -38,9 +39,9 @@ class Home extends React.Component{
                         </div>
                         <Row>
                             { beautysetItem.map((data, key)=>
-                                <Col md={6} lg={4}>
+                                <Col md={6} lg={4} key={key}>
                                 <BeautysetItem
-                                key={key}
+                                topicId={data.topic_id}
                                 title={data.topic_name}
                                 description={data.topic_description}
                                 image={data.topic_img}
@@ -59,13 +60,13 @@ class Home extends React.Component{
 class BeautysetItem extends React.Component{
     render(){
         return(
-            <a href="#" className="beautyset-item">
+            <Link to={"/beautyset/" + this.props.topicId} className="beautyset-item">
                 <img src={this.props.image} className="beautyset-image"/>
                 <div className="content-container">
                     <div className="content-title"><b>{this.props.title}</b></div>
                     <div className="content-desc">{this.props.description}</div>
                 </div>
-            </a>
+            </Link>
         )
     }
 }

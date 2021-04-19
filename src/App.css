@@ -1,4 +1,4 @@
-#root{
+#root, html, body, .App{
   height: 100%;
 }
 
@@ -7,7 +7,5 @@
 }
 
 #container{
-  padding-top: 5em;
-  padding-bottom: 3em;
   height: 100%;
 }
