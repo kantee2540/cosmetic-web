@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { beautySetLimit } from '../Network/Beautyset'
 import welcome from './welcome.png'
 import './Home.css'
+import Placeholder from '../Images/placeholder_image.png'
 
 class Home extends React.Component{
 
@@ -32,7 +33,10 @@ class Home extends React.Component{
             <Container>
                 <div id="home" ref={this.wrapper}>
                     <img src={welcome} className="welcome-image"/>
-                    <input placeholder="Search Cosmetic" className="search-input"/>
+                    <div style={{textAlign: "center"}}>
+                        <input placeholder="Search Cosmetic" className="search-input"/>
+                    </div>
+                    
                     <div id="bottom-view">
                         <div className="bottom-view-title">
                             <b>Beauty set</b>
@@ -61,7 +65,13 @@ class BeautysetItem extends React.Component{
     render(){
         return(
             <Link to={"/beautyset/" + this.props.topicId} className="beautyset-item">
+                { this.props.image !== "" ?
                 <img src={this.props.image} className="beautyset-image"/>
+                :
+                <div className="no-image">
+                    <img src={Placeholder}/>
+                </div>
+                }
                 <div className="content-container">
                     <div className="content-title"><b>{this.props.title}</b></div>
                     <div className="content-desc">{this.props.description}</div>

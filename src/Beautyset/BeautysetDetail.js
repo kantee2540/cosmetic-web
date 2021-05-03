@@ -5,6 +5,7 @@ import { withRouter, Redirect } from 'react-router-dom'
 import './Beautyset.css'
 import { Link } from 'react-router-dom'
 import { isMobileSafari } from 'react-device-detect'
+import Placeholder from '../Images/placeholder_image.png'
 
 class BeautysetDetail extends React.Component {
 
@@ -44,7 +45,10 @@ class BeautysetDetail extends React.Component {
             <div id="beauty-set-detail">
                 <Container style={{height: '100%'}}>
                     <div id="image-cover">
-                        <img src={topic.topic_img} style={{objectFit:'cover', width: '100%'}}/>
+                        { topic.topic_img !== "" ?
+                        <img src={topic.topic_img} style={{objectFit:'cover', width: '100%'}}/> :
+                        <img src={Placeholder} style={{ width:100, height: 100 }}/>
+                        }
                     </div>
                     <div id="detail">
                         <h1>{topic.topic_name}</h1>

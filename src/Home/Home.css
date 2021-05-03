@@ -71,4 +71,16 @@
     object-fit: cover;
 }
 
+.beautyset-item .no-image{
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beautyset-item .no-image img{
+    width: 80px;
+    height: 80px;
+}
+
 input:focus {outline:none;}

@@ -1,9 +1,10 @@
 import './App.css';
 import MiniMenu from './Menu/MiniMenu'
-import BeautysetDetail from './Beautyset/BeautysetDetail'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './Home/Home'
+import BeautysetDetail from './Beautyset/BeautysetDetail'
+import ProductDetail from './Product/ProductDetail'
 
 function App() {
   return (
@@ -18,7 +19,11 @@ function App() {
             <Route path="/beautyset/:id">
               <BeautysetDetail/>
             </Route>
+            <Route path="/product/:id">
+              <ProductDetail/>
+            </Route>
           </Switch>
+          
         </div>
       </div>
     </BrowserRouter>

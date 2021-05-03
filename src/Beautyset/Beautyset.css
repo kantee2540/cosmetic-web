@@ -6,6 +6,9 @@
 #image-cover{
     padding-bottom: 2em;
     height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #image-cover img{
